@@ -1,0 +1,2 @@
+This file intentionally keeps the empty package directories visible in source distributions.
+
