@@ -104,7 +104,26 @@ MCP 客户端配置示例：
 }
 ```
 
-### 运行 REST / Remote MCP
+### Codex Desktop Chat 本地 Workflow
+
+本项目可以作为本地 Codex Plugin 使用，不需要启动 HTTP 服务，也不需要部署公网。
+
+首次安装：
+
+```powershell
+codex plugin marketplace add .
+codex plugin add finance-research@finance-analysis-max-local
+```
+
+重启 Codex Desktop 后，在 Chat 中新建对话并输入：
+
+```text
+@finance-research 请调用 calculate_metrics，分析价格序列 [100,102,101,105,107]。
+```
+
+Workflow 会由 Codex 自动拉起仓库内的本地 stdio MCP，并将指标计算、行情数据、证据、预测和排序交给 Python 研究引擎执行。新闻、政策等外部证据在 Chat 检索能力可用时补充；缺失数据会明确标记，不会用模型记忆填补。
+
+### 可选：运行 REST / Remote MCP
 
 ```powershell
 python -m finance_research.adapters.rest --host 127.0.0.1 --port 8000

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "finance-analysis-max-local": {
+      "command": "python",
+      "args": ["-m", "finance_research.adapters.mcp_stdio"],
+      "cwd": "."
+    }
+  }
+}

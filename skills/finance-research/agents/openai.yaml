@@ -1,0 +1,4 @@
+interface:
+  display_name: "Finance Analysis Max"
+  short_description: "Evidence-first financial research from a local Python engine"
+  default_prompt: "Use @finance-research to research, compare, forecast, or screen a financial instrument with dated evidence."

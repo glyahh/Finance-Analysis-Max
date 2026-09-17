@@ -213,7 +213,7 @@ class McpServer:
 
 
 def serve_stdio(stdin: TextIO = sys.stdin, stdout: TextIO = sys.stdout) -> None:
-    """Read MCP Content-Length frames; accept JSON lines for local smoke tests."""
+    """Read MCP frames and emit the newline-delimited stdio transport format."""
 
     server = McpServer()
     while True:
@@ -232,7 +232,5 @@ def serve_stdio(stdin: TextIO = sys.stdin, stdout: TextIO = sys.stdout) -> None:
             raw = first
         response = server.dispatch(json.loads(raw))
         if response is not None:
-            encoded = json.dumps(response, ensure_ascii=False).encode("utf-8")
-            stdout.write(f"Content-Length: {len(encoded)}\r\n\r\n")
-            stdout.write(encoded.decode("utf-8"))
+            stdout.write(json.dumps(response, ensure_ascii=False) + "\n")
             stdout.flush()

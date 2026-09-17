@@ -1,0 +1,20 @@
+{
+  "name": "finance-analysis-max-local",
+  "interface": {
+    "displayName": "Finance Analysis Max Local"
+  },
+  "plugins": [
+    {
+      "name": "finance-research",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Research"
+    }
+  ]
+}

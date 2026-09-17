@@ -1,0 +1,29 @@
+{
+  "name": "finance-research",
+  "version": "0.1.0",
+  "description": "Evidence-first financial research workflow powered by the local Finance Analysis Max engine.",
+  "author": {
+    "name": "glyahh",
+    "url": "https://github.com/glyahh"
+  },
+  "homepage": "https://github.com/glyahh/Finance-Analysis-Max",
+  "repository": "https://github.com/glyahh/Finance-Analysis-Max",
+  "license": "MIT",
+  "keywords": ["finance", "research", "evidence", "forecast", "mcp"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Finance Analysis Max",
+    "shortDescription": "Evidence-first financial research",
+    "longDescription": "在本机 Chat 中调用 Finance Analysis Max 的证据、量化、预测和排序能力。",
+    "developerName": "glyahh",
+    "category": "Research",
+    "capabilities": ["Research", "Analysis"],
+    "defaultPrompt": [
+      "@finance-research 分析一个金融标的",
+      "@finance-research 比较多个候选标的",
+      "@finance-research 计算历史收益和风险指标"
+    ],
+    "brandColor": "#0F766E"
+  }
+}
